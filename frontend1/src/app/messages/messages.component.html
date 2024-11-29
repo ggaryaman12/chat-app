@@ -1,0 +1,9 @@
+<div class="message-list" *ngIf="selectedUser">
+  <h3>Messages for {{ selectedUser.name }}</h3>
+  <div *ngFor="let message of getUserMessages()">
+    <p><strong>{{ message.timestamp | date:'shortTime' }}:</strong> {{ message.content }}</p>
+  </div>
+</div>
+<div *ngIf="!selectedUser">
+  <p>Select a user to view messages</p>
+</div>

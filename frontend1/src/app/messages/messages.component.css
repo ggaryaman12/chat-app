@@ -1,0 +1,9 @@
+.message-list {
+    padding: 10px;
+  }
+  
+  .message-list p {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+  }
+  

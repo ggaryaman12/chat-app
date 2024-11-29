@@ -1,0 +1,10 @@
+.chat-container {
+    display: flex;
+    height: 100vh;
+  }
+.user-list{
+    width: 30%;
+}
+.message-container{
+    width: 100%;
+}

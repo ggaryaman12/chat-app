@@ -1,0 +1,11 @@
+<div class="chat-container">
+  <div class="user-list">
+    <!-- Pass the onUserSelected method to child component to handle user selection -->
+    <app-user-list (userSelected)="onUserSelected($event)"></app-user-list>
+  </div>
+
+  <div class="message-container">
+    <!-- Pass the selected user to MessageComponent -->
+    <app-messages [selectedUser]="selectedUser"></app-messages>
+  </div>
+</div>

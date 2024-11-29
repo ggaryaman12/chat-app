@@ -1,0 +1,34 @@
+<div class="login-container">
+  <div class="login-left">
+    <h2>Signup! 👋</h2>
+    <p>How do I get started?</p>
+    <button class="btn btn-google" (click)="signInWithGoogle()">Sign in with Google</button>
+    <button class="btn btn-apple" (click)="signInWithApple()">Sign in with Apple</button>
+    <p>or Signup with follwoing details!</p>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <label for="fullName">Full Name</label>
+      <input type="text"  formControlName="fullName" placeholder="Aryaman Gupta">
+      <label for="username">Username</label>
+      <input type="text"  formControlName="username" placeholder="ggaryaman12">
+      <label for="password">Password</label>
+      <input type="password" id="password" formControlName="password" placeholder="******">
+    
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" id="confirmPassword" formControlName="confirmPassword" placeholder="******">
+      
+      <!-- Error message if passwords do not match -->
+      <div [ngClass]="{'error-visible': signupForm.errors?.passwordMismatch, 'error-hidden': !signupForm.errors?.passwordMismatch}">
+        <p style="color:red;">Passwords do not match</p>
+      </div>
+      <button type="submit" class="btn btn-signin" [ngClass]="{'disable-signup': !signupForm.valid}" [disabled]="!signupForm.valid">Sign In</button>
+    </form>
+    <p>Don't have an account? <a href="#">Sign Up Now</a></p>
+  </div>
+  <div class="login-right">
+    <div class="login-info">
+      <h3>Why should I login?</h3>
+      <p>By logging in, you can chat with your friends.</p>
+      <img src="assets/dashboard-example.png" alt="Dashboard example">
+    </div>
+  </div>
+</div>
